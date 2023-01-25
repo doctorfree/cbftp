@@ -2,7 +2,7 @@ Name: cbftp
 Version:    %{_version}
 Release:    %{_release}
 BuildArch:  x86_64
-Requires:   ncurses, openssl
+Requires:   ncurses, openssl-libs
 URL:        https://github.com/doctorfree/cbftp
 Vendor:     Doctorwhen's Bodacious Laboratory
 Packager:   ronaldrecord@gmail.com
