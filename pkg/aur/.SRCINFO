@@ -7,7 +7,8 @@ pkgbase = cbftp
 	arch = armv7h
 	license = MIT
 	makedepends = zip
-	depends = gcc-libs
+	depends = openssl
+	depends = ncurses
 	source = cbftp::git+https://github.com/doctorfree/cbftp.git
 	sha256sums = SKIP
 

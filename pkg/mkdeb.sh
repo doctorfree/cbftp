@@ -79,7 +79,7 @@ Version: ${PKG_VER}-${PKG_REL}
 Section: misc
 Priority: optional
 Architecture: ${ARCH}
-Depends: libncurses-dev
+Depends: libncurses-dev, openssl
 Maintainer: ${DEBFULLNAME} <${DEBEMAIL}>
 Installed-Size: 2000
 Build-Depends: debhelper (>= 11)
