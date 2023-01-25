@@ -1,12 +1,9 @@
-# CBFTP
-
 ```
      _   ___ _
  ___| |_|  _| |_ ___
 |  _| . |  _|  _| . |
 |___|___|_| |_| |  _|
                 |_|
-
 ```
 Cbftp is an advanced multi-purpose FTP/FXP client that focuses on efficient
 large-scale data spreading, while also supporting most regular FTP/FXP use
@@ -242,12 +239,12 @@ The site-specific skiplist is applied first for matching on a specific site.
 If no match is found it falls through to the section skiplist (for spread
 jobs), which in turn falls through to the global skiplist.
 
-The wildcard characters * (match any number of any character) and ? (match any
+The wildcard characters `*` (match any number of any character) and `?` (match any
 single character) are the currently supported, or regex mode can be used.
 The skiplists are not case sensitive.
 
 The regex flavor is ECMAScript, which is default in C++'s std::regex,
-with the addition of case insensitivity support via (?i).
+with the addition of case insensitivity support via `(?i)`.
 
 Some skiplisting examples:
 
@@ -491,13 +488,12 @@ information about that specific transfer.
 ## GLOBAL KEY BINDINGS
 
 There are a few hotkeys that work from (almost) anywhere in the cbftp UI:
-\ - Toggle fullscreen mode (i.e. hide info bar + legend bar).
-p - Start the latest prepared spread job.
-N - Toggle the next prepared spread job auto starter. While this function is
-    enabled, the next 'prepare' remote command that arrives will be started
-    immediately. The toggle times out after 10 minutes.
-- - Highlight the entire table line. Usable in lists, tables etc where it
-    might be hard to tell which items that are on the same line
+
+* \ - Toggle fullscreen mode (i.e. hide info bar + legend bar).
+* p - Start the latest prepared spread job.
+* N - Toggle the next prepared spread job auto starter. While this function is enabled, the next 'prepare' remote command that arrives will be started immediately. The toggle times out after 10 minutes.
+* - - Highlight the entire table line. Usable in lists, tables etc where it might be hard to tell which items that are on the same line
+
 They can be configured through the global options screen.
 
 ## METRICS
@@ -537,16 +533,17 @@ Example:
 ```
 
 The single character marking each file describes the state of the file:
-_ - file does not exist
-. - file exists
-o - you own this file
-u - someone is uploading this file
-U - you are uploading this file
-d - you are downloading this file
-D - you are downloading this file and you also own it
-s - you are downloading this file that someone else is uploading
-S - you are uploading and downloading this file
-p - file exists and the site is download-only in this job
+
+* _ - file does not exist
+* . - file exists
+* o - you own this file
+* u - someone is uploading this file
+* U - you are uploading this file
+* d - you are downloading this file
+* D - you are downloading this file and you also own it
+* s - you are downloading this file that someone else is uploading
+* S - you are uploading and downloading this file
+* p - file exists and the site is download-only in this job
 
 ## EXTERNAL SCRIPTS
 
@@ -580,6 +577,7 @@ binding information found in the legend bar. You can probably figure it out.
 ## FAQ
 
 Q: Why aren't my IPv6 transfers working?
+
 A: The site(s) or your local system may not be configured with working IPv6
    connectivity, or the site(s) might not include an address in its EPSV
    response. Make sure that CEPR is enabled and that the site responds with an
@@ -587,26 +585,29 @@ A: The site(s) or your local system may not be configured with working IPv6
    connectable.
 
 Q: What key should I press to do xyz?
+
 A: A full keybind summary and configuration for the current screen is available
    by pressing '?'. You can also see keybinds in the legend bar at the bottom.
 
 Q: My modifications are not saved when I edit a setting/site/whatever!
+
 A: You usually need to press 'd' (as in Done) to save settings when editing.
    Pressing c or escape normally means cancel without saving changes.
 
 Q: Can I change key bindings?
+
 A: Yes, press '?' to see and edit keybindings for the current screen.
 
-Q: Some fields do not seem to be visible in the UI, or are disappearing
-   sometimes. What's going on?
+Q: Some fields do not seem to be visible in the UI, or are disappearing sometimes. What's going on?
+
 A: Cbftp adjusts the view dynamically depending on how much space is needed
    to show the fields, and how much space is available. The fields shown
    are chosen based on an internal priority specification. Make your terminal
    larger!
 
-Q: What is the difference between fixed and dynamic list frequency? And what
-   does auto mean in this context?
-   Dynamic list frequency means that the number of times per second that cbftp
+Q: What is the difference between fixed and dynamic list frequency? And what does auto mean in this context?
+
+A: Dynamic list frequency means that the number of times per second that cbftp
    will refresh file lists on that site will drop voluntarily if the CPU load
    gets too high, but also that it refreshes a little faster than its fixed
    counterpart otherwise. This is in theory a good thing since lower rate is
@@ -618,8 +619,8 @@ Q: What is the difference between fixed and dynamic list frequency? And what
    than "normal". The auto mode is meant to be a balanced setting that works
    very well in most scenarios.
 
-Q: Cbftp looks weird. It shows things like ljljljljljljljljlj in various
-   places. And/or I can't see the snake when trying to play snake. Why?
+Q: Cbftp looks weird. It shows things like ljljljljljljljljlj in various places. And/or I can't see the snake when trying to play snake. Why?
+
 A: Cbftp is meant to be displayed with unicode. Somewhere between cbftp and
    your terminal emulator, there is a component that strips unicode characters
    away. It could be that your system locale is not set to UTF-8, that your
@@ -628,8 +629,8 @@ A: Cbftp is meant to be displayed with unicode. Somewhere between cbftp and
    doesn't use UTF-8... Go through every step of the way and make sure that
    unicode/UTF-8 support is enabled everywhere.
 
-Q: Cbftp gets SSL/TLS error when connecting to some of my sites, what should I
-   do?
+Q: Cbftp gets SSL/TLS error when connecting to some of my sites, what should I do?
+
 A: Your system is probably using an old version of OpenSSL. Either upgrade
    to a newer system version, or grab a copy of the latest OpenSSL version
    from openssl.org, compile it (./config && make) and then let cbftp know
@@ -637,29 +638,32 @@ A: Your system is probably using an old version of OpenSSL. Either upgrade
    cbftp root dir, and then rebuild cbftp.
 
 Q: Is there some raw connection data output available anywhere?
+
 A: Yes, see the "connection details" section above.
 
 Q: How can I see which chains cbftp is using?
+
 A: Cbftp doesn't really use chains in the traditional sense. See the "the
    transfer engine" section further up in this file.
    You can see current transfers and their source/destination by pressing t
    from the main screen.
 
-Q: What's the difference between 'race' and 'distribute' when starting a
-   spread job?
+Q: What's the difference between 'race' and 'distribute' when starting a spread job?
+
 A: The profile affects the algorithm that assigns scores to potential
    transfers. The 'race' profile focuses on uploading more files than other
    users everywhere, while the 'distribute' profile focuses on finishing the
    job on all sites as quickly as possible.
 
-Q: What is the block of seemingly random characters above the spread job status
-   table supposed to be?
+Q: What is the block of seemingly random characters above the spread job status table supposed to be?
+
 A: Read each column from top to bottom. Cbftp attempts to describe each file
    in the job by finding a sequence of 3 characters in the file name that are
    unique to that file. In many cases it will be the file suffix, or maybe
    some kind of numbering. See the "spread job status" section above.
 
 Q: Can I use multiple addresses (bouncers) to a site? How do I sort them?
+
 A: Yes, just add them all on the address line with spaces between. Cbftp does
    actually have a built-in sorting feature, but it's hard to spot. By default
    cbftp will attempt to connect on the first address in the list. If it does
@@ -668,6 +672,7 @@ A: Yes, just add them all on the address line with spaces between. Cbftp does
    be stored first in the list for next time.
 
 Q: I have so many spread jobs running! Why won't they finish?
+
 A: Cbftp tries its best to make sure that all files are uploaded on all
    involved sites. As long as any site does not have all files, cbftp will
    keep trying to upload (until a reasonable amount of attempts have been
@@ -675,6 +680,7 @@ A: Cbftp tries its best to make sure that all files are uploaded on all
    can't keep up, there will be lots of running jobs.
 
 Q: I have a spread job that says 100% done but is still running, why?
+
 A: Cbftp needs to list the directories for a few seconds after all files
    in a spread job have been uploaded to make sure that the directory is
    completed. If all slots for any involved site are busy doing other things,
@@ -682,6 +688,7 @@ A: Cbftp needs to list the directories for a few seconds after all files
    until that site has time to list the directory.
 
 Q: My spread jobs end in timeout instead of "done", what's wrong?
+
 A: Usually this happens because one or more sites cannot finish the job
    due to being down, out of space, not having any transfer sources, or some
    other reason for not being able to receive files. Another common reason
@@ -691,6 +698,7 @@ A: Usually this happens because one or more sites cannot finish the job
    Make sure to skiplist anything unwanted!
 
 Q: One or several sites is executing STAT/LIST commands over and over, why?
+
 A: During a spread job, cbftp uses connections that are currently not busy
    performing file transfers for continuously listing the spread job
    directories. This information is then used for calculating the transfer
@@ -698,6 +706,7 @@ A: During a spread job, cbftp uses connections that are currently not busy
    and so on. It is completely normal.
 
 Q: How do I disconnect from a site?
+
 A: Disconnecting is an old habit that comes from traditional clients that
    "lock" slots to the user interface. Cbftp does not do this, and there's
    really no gain in disconnecting manually. Cbftp will disconnect by itself
@@ -707,27 +716,33 @@ A: Disconnecting is an old habit that comes from traditional clients that
    right connection, and then press d.
 
 Q: How do I exit cbftp? Do I need to save the data file somehow?
+
 A: press ctrl-c. The data file is written automatically once in a while
    when cbftp is running, and upon exit.
 
 Q: Can I edit the data file manually?
+
 A: Yes, there are tools provided for that: bin/datafilecat and
    bin/datafilewrite. You can also read the file directly through OpenSSL
    commands:
    openssl enc -d -aes-256-cbc -pbkdf2 -md sha256 -in ~/.cbftp/data
 
 Q: Can I run cbftp on Windows?
+
 A: Yes, it should work through cygwin, but it hasn't been tested lately and
    the polling mechanism available there is not as efficient.
 
 Q: Can I share this software with others?
+
 A: Sure, go ahead.
 
 Q: Will feature X be added soon?
+
 A: I'm open to all kinds of suggestions, but I have very little spare time
    and development is therefore rather slow.
 
 Q: How do I upgrade to a newer version?
+
 A: Just compile and run the new version. The data file will be adjusted to
    the new format if necessary. But CAREFUL! Do not start an older version
    again after this, as this might result in some information being lost
@@ -735,9 +750,11 @@ A: Just compile and run the new version. The data file will be adjusted to
    are uncertain or want to try things out.
 
 Q: Can I make modifications to cbftp?
+
 A: That's why the source code is provided! If you are adding things that
    would be useful for others, make sure to pass your changes back upstream,
    and they might end up in the upstream source tree eventually.
 
 Q: Where can I donate to show my support for this awesome software?
+
 A: No need, I mostly do this for my own amusement.
