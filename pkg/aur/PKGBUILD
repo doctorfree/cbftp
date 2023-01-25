@@ -61,7 +61,7 @@ package() {
   cp bin/* ${pkgdir}/${destdir}/bin
 
   cp LICENSE ${pkgdir}/${destdir}/share/${pkgname}
-  cp README ${pkgdir}/${destdir}/share/${pkgname}
+  cp README.md ${pkgdir}/${destdir}/share/${pkgname}
   cp VERSION ${pkgdir}/${destdir}/share/${pkgname}
   cp -a examples ${pkgdir}/${destdir}/share/${pkgname}/examples
 

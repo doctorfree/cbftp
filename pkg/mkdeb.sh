@@ -98,7 +98,7 @@ done
 ${SUDO} cp bin/* ${OUT_DIR}/${DESTDIR}/bin
 
 ${SUDO} cp LICENSE ${OUT_DIR}/${DESTDIR}/share/${PKG}
-${SUDO} cp README ${OUT_DIR}/${DESTDIR}/share/${PKG}
+${SUDO} cp README.md ${OUT_DIR}/${DESTDIR}/share/${PKG}
 ${SUDO} cp VERSION ${OUT_DIR}/${DESTDIR}/share/${PKG}
 ${SUDO} cp -a examples ${OUT_DIR}/${DESTDIR}/share/${PKG}/examples
 ${SUDO} cp -a man/man1 ${OUT_DIR}/${DESTDIR}/share/man/man1
