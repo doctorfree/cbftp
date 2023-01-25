@@ -1,0 +1,14 @@
+pkgbase = cbftp
+	pkgdesc = NCurses advanced multi-purpose FTP/FXP client
+	pkgver = v1.0.1r1
+	pkgrel = 1
+	url = https://github.com/doctorfree/cbftp
+	arch = x86_64
+	arch = armv7h
+	license = MIT
+	makedepends = zip
+	depends = gcc-libs
+	source = cbftp::git+https://github.com/doctorfree/cbftp.git
+	sha256sums = SKIP
+
+pkgname = cbftp
