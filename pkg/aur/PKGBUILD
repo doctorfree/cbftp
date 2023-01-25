@@ -63,6 +63,7 @@ package() {
   cp LICENSE ${pkgdir}/${destdir}/share/${pkgname}
   cp README ${pkgdir}/${destdir}/share/${pkgname}
   cp VERSION ${pkgdir}/${destdir}/share/${pkgname}
+  cp -a examples ${pkgdir}/${destdir}/share/${pkgname}/examples
 
   cp -a man/man1 ${pkgdir}/${destdir}/share/man/man1
 
