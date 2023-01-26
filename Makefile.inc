@@ -10,7 +10,7 @@ DATA_FILE := "\"~/.cbftp/data\""
 UNAME_S := $(shell uname -s)
 ifneq ($(STATIC_SSL_PATH),)
 STATIC_SSL_INCLUDE := -I$(STATIC_SSL_PATH)/include
-STATIC_SSL_LINK := $(STATIC_SSL_PATH)/libssl.a $(STATIC_SSL_PATH)/libcrypto.a
+STATIC_SSL_LINK := $(STATIC_SSL_PATH)/lib/libssl.a $(STATIC_SSL_PATH)/lib/libcrypto.a
 SSL_LINKFLAGS := $(STATIC_SSL_LINK) -ldl
 else
 SSL_LINKFLAGS := -lssl -lcrypto

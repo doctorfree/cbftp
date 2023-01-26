@@ -34,7 +34,7 @@ group="root"
   group="wheel"
   have_brew=`type -p brew`
   [ "${have_brew}" ] && {
-    brew install coreutils make gcc@12
+    brew install coreutils make gcc@12 openssl
   }
 }
 
