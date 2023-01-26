@@ -1,7 +1,7 @@
 # Maintainer: Ronald Record <ronaldrecord@gmail.com>
 
 pkgname=cbftp
-pkgver=v1.0.1r1
+pkgver=v1.0.1r2
 pkgrel=1
 pkgdesc="NCurses advanced multi-purpose FTP/FXP client"
 arch=('x86_64' 'armv7h')
@@ -24,6 +24,10 @@ build() {
     cat ${NCW} | sed -e "s%ncursesw/curses.h%ncurses.h%" > /tmp/nc$$
     cp /tmp/nc$$ ${NCW}
     rm -f /tmp/nc$$
+    unset OPTFLAGS
+    unset CXXFLAGS
+    unset CFLAGS
+    unset LINKFLAGS
     make
     [ -f /tmp/nc_save$$ ] && cp /tmp/nc_save$$ ${NCW}
   }
