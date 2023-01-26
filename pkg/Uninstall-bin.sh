@@ -3,6 +3,9 @@
 CBTP_DIRS="/usr/local/share/cbftp"
 
 CBTP_FILES="/usr/local/bin/cbftp \
+/usr/local/bin/cbftp-debug \
+/usr/local/bin/datafilecat \
+/usr/local/bin/datafilewrite \
 /usr/local/share/man/man1/cbftp.1"
 
 user=`id -u -n`
